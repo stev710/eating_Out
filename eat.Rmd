@@ -29,7 +29,7 @@ require(knitr)
 require(foreign)
 ```
 ```{r, eval=FALSE}
-GSS <-read.dta(file="GSSxxxx.dta")
+GSS <-read.dta(file="GSS1996.dta")
 GSS <- droplevels(GSS)
 mydata <- select(GSS,race,age,eatout)
 mydata <- na.omit(mydata)
