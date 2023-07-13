@@ -76,4 +76,7 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
+# Discussion and Conclusion
+Bases on results, we reject the null hypothesis since the p-value is so small. Considering how small this number is 0.0008179., showing there is a difference 
+in the frequency of earting out based on race.
 
