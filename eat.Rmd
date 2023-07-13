@@ -1,12 +1,13 @@
+---
 title: "Eating Out"
 author: "Estevan Green"
 output: 
-  html_document:
-    number_sections: true
-    toc: true
-    toc_depth: 5
-date: "`r Sys.Date()`"    
-    
+ html_document:
+number_sections: true
+toc: true
+toc_depth: 5
+date: "`r Sys.Date()`"
+
 ---
 
 ```{r setup, include=FALSE}
@@ -56,3 +57,19 @@ barchartGC(~race+eatout,data=mydata,type="percent")
 The bar chart suggests that there is a difference in the percentage of white ethnicity to other ethnicity in eating out.
 
 ## Numerical Description
+
+```{r}
+table1 <- xtabs(~race+eatout,data=mydata)
+rowPerc (table1)
+colPerc(table1)
+```
+
+
+
+### Inferential results
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
