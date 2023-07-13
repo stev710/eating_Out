@@ -1,28 +1,27 @@
----
 title: "Eating Out"
 author: "Estevan Green"
 output: 
-  html_document:
-    number_sections: true
-    toc: true
-    toc_depth: 5
-date: "`r Sys.Date()`"    
-    
+  html_document:
+    number_sections: true
+    toc: true
+    toc_depth: 5
+date: "`r Sys.Date()`"    
+    
 ---
 
-```{r setup, include = FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-# Inrtroduction
 
+# Introduction
 
-Is there a difference in ethnicity and how frequently they eat out?
+Is there a difference in ethnicity in how frequently they eat?
 
 ## There were two years in which the General Social Survey asked about the frequency of eating out.
-### Find those years and for the first year the question was asked download that years data in a stata format - its name will be "GSSxxxx.dta" where the xxxx is replaced by the year.  For example if the year was 1983 its name would be GSS1983.dta. Your assignment is to download the GSS yearly dataset for the first year the question was asked and then  write up the answer to the question by editing the  code block in line 31 to eval=TRUE and finish the job.
+### Find those years and for the first year the question was asked download that years data in a stata format - its name will be "GSSxxxx.dta" where the xxxx is replaced by the year.  For example if the year was 1983 its name would be GSS1983.dta. Your assignment is to download the GSS yearly dataset for the first year the question was asked and then  write up the answer to the question by editing the  code block in line 31 to eval=TRUE and finish the job. 
 
-$H_0$ There is no difference among the various races with frequency of eating out  
-$H_A$ There is a statistical difference between at least two races with the frequency of eating out  
+$H_0$ There is no difference among the various races with frequency of eating out  
+$H_A$ There is a statistical difference between at least two races with the frequency of eating out  
 
 
 ```{r include=FALSE,echo=FALSE}
@@ -32,7 +31,7 @@ require(tigerstats)
 require(knitr)
 require(foreign)
 ```
-```{r eval=true}, include=F}
+```{r eval=TRUE, include=F}
 GSS <-readstata13::read.dta13(file="GSS1996.dta")
 GSS <- droplevels(GSS)
 mydata <- select(GSS,race,age,eatout)
@@ -42,21 +41,18 @@ mydata <- na.omit(mydata)
 
 
 
-
 # Method
 
 # Descriptive Results
 
-## Graphical Results
-
+# Graphical Results 
 
 ```{r}
 barchartGC(~race+eatout,data=mydata)
-barchartGC(~race+eatout,data=mydata,type ="percent")
+barchartGC(~race+eatout,data=mydata,type="percent")
 ```
-This bar chart suggests that there is a difference in the percentage of white ethnicity to black ethnicty other ethnicity in eating out.
 
 
+The bar chart suggests that there is a difference in the percentage of white ethnicity to other ethnicity in eating out.
 
-
-
+## Numerical Description
