@@ -47,8 +47,8 @@ mydata <- na.omit(mydata)
 
 
 # Method
-the response variable is stating the difference in race and the frequency of times 
-each race eats out.
+Is there is difference based on frequency in ethnicitys in how often they eat 
+out. 
 
 # Results
 
@@ -86,7 +86,10 @@ fisherXY(mydata$race,mydata$eatout,printAll=T)
 
 Chi squared test shows the p value 0.0008179, we see the number is so small that
 we reject the null hypothesis.
-The fisher exact test for count data shows that the p value 0.001208 is also very small that we reject the null hypothesis.
+
+The fisherXY test for count data shows that the p value 0.001208 is also very small that we reject the null hypothesis.
+
+
 
 # Discussion and Conclusion
 Based on results, we reject the null hypothesis since the p-value is so small. Considering how small this number is 0.0008179, showing there is a difference 
